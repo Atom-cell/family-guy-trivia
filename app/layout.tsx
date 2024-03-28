@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Shantell_Sans } from "next/font/google";
+import { Inter } from 'next/font/google'
 import "./globals.css";
 import Navbar from "./components/Navbar";
-const poppins = Shantell_Sans({subsets: ["latin"]});
+const inter = Inter({subsets: ["latin"]});
 
 export const metadata: Metadata = {
   title: "Family Guy",
@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={poppins.className}>
+      <body className={inter.className}>
         <Navbar />
         {children}
       </body>
