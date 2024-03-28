@@ -12,7 +12,7 @@ const Navbar = () => {
 					<Image src={logo} alt='family guy logo' width={90} height={80} />
 				</Link>
 				<Link href='/quiz'>
-					<button className='bg-green-500 text-black px-6 py-3 font-semibold rounded-lg hover:bg-green-600/100 flex items-center space-x-1'>
+					<button className='bg-green-500 text-black px-3 py-3 font-semibold rounded-lg hover:bg-green-600/100 flex items-center space-x-1'>
 						<TbArrowBigRightFilled className='text-xl'/>
 						<h4>Take Quiz</h4>
 					</button>
