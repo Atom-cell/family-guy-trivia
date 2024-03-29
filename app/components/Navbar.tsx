@@ -9,7 +9,7 @@ const Navbar = () => {
 		<div className='border-b border-gray-700'>
 			<div className=' flex justify-between items-center max-w-screen-md mx-auto px-3 h-20 '>
 				<Link href='/'>
-					<Image src={logo} alt='family guy logo' width={90} height={80} />
+					<Image src={logo} alt='family guy logo' width={70} height={60} />
 				</Link>
 				<Link href='/quiz'>
 					<button className='bg-green-500 text-black px-4 py-3 font-semibold hover:bg-green-600/100 flex items-center space-x-1'>
