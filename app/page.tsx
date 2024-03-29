@@ -15,7 +15,7 @@ type Character = {
 const getCharacters = async (): Promise<Character[]> => {
 	// try {
 	// } catch {}
-	const data = await fetch('http://localhost:3002/api/characters');
+	const data = await fetch('http://localhost:3000/api/characters');
 	const result = await data.json();
 	return result.data;
 };
