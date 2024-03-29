@@ -1,4 +1,4 @@
-import Character from "./components/Character";
+import Character from './components/Character';
 
 type Character = {
 	id: number;
@@ -17,19 +17,18 @@ const getCharacters = async (): Promise<Character[]> => {
 	// } catch {}
 	const data = await fetch('http://localhost:3002/api/characters');
 	const result = await data.json();
-  return result.data;
+	return result.data;
 };
 
 export default async function Home() {
-	const characters:Character[] = await getCharacters();
+	const characters: Character[] = await getCharacters();
 
 	return (
-		<main className='max-w-screen-md border max-auto flex '>
-			{
-        characters.map((character: Character) => {
-          return <p>{character.name}</p>
-        })
-      }
-		</main>
+		
+			<main className='max-w-screen-md mx-auto flex justify-center items-center flex-wrap pt-6'>
+				{characters.map((character: Character) => {
+					return <Character key={character.id} slug={character.slug} avatar={character.avatar} />;
+				})}
+			</main>
 	);
 }
