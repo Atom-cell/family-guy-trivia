@@ -29,7 +29,7 @@ const getCharacterInfo = async (name: string): Promise<Character> => {
 const page = async ({ params }: { params: { name: string } }) => {
 	const data: Character = await getCharacterInfo(params.name);
 	return (
-		<div className='max-w-screen-md mx-auto flex flex-col flex-wrap pt-6'>
+		<div className='max-w-screen-md mx-auto flex flex-col flex-wrap pt-6 px-2'>
 			<h3 className='font-bold mb-2'>
 				{data.name
 					.split(' ')
@@ -48,19 +48,19 @@ const page = async ({ params }: { params: { name: string } }) => {
 			</div>
 			<p className='mt-4 text-sm leading-6 my-3'>{data.description}</p>
 
-			<div className='flex flex-wrap space-x-3 '>
+			<div className='flex flex-wrap justify-start items-start '>
 				<Suspense fallback={<ImageLoader />}>
 					{data.images?.map((image: string) => (
 						<div
 							key={image}
-							className='overflow-hidden rounded-lg'
+							className='overflow-hidden rounded-lg m-1'
 						>
 							<Image
 								src={image}
 								width={300}
 								height={300}
 								alt='image'
-								className='rounded-lg object-cover hover:rotate-2 hover:scale-105 ease-linear transition-transform duration-200'
+								className='rounded-lg w-[360px] h-[224px] object-cover hover:rotate-2 hover:scale-105 ease-linear transition-transform duration-200'
 							/>
 						</div>
 					))}
