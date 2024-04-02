@@ -16,7 +16,7 @@ const Character = ({ slug, avatar }: CharacterProps) => {
 					width={250}
 					height={200}
 					alt='Image'
-					className='max-sm:h-64 max-sm:w-64 sm:h-72 sm:w-72 md:h-64 md:w-64 lg:h-44 lg:w-44 hover:rotate-2 hover:scale-110 ease-linear transition-transform duration-200'
+					className='max-sm:h-60 max-sm:w-60 lg:h-44 lg:w-44 hover:rotate-2 hover:scale-110 ease-linear transition-transform duration-200'
 				/>
 			</div>
 		</Link>

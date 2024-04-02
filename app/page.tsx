@@ -24,11 +24,16 @@ export default async function Home() {
 	const characters: Character[] = await getCharacters();
 
 	return (
-		
-			<main className='max-w-screen-md mx-auto flex justify-center items-center flex-wrap pt-6'>
-				{characters.map((character: Character) => {
-					return <Character key={character.id} slug={character.slug} avatar={character.avatar} />;
-				})}
-			</main>
+		<main className='max-w-screen-md mx-auto flex justify-center items-center flex-wrap pt-6'>
+			{characters.map((character: Character) => {
+				return (
+					<Character
+						key={character.id}
+						slug={character.slug}
+						avatar={character.avatar}
+					/>
+				);
+			})}
+		</main>
 	);
 }
