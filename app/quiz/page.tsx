@@ -21,13 +21,13 @@ const page = () => {
 					</button>
 				</Link>
 			</div>
-			<div className='relative w-3/6 max-sm:w-full'>
+			<div className='relative w-3/6 max-sm:w-full max-sm'>
 				<Image
 					src={Wallpaper}
 					alt='wallpaper'
 					className='w-full h-full object-cover rounded-lg'
 				/>
-				<div className='absolute inset-0 bg-gradient-to-r from-black via-transparent to-transparent'></div>
+				<div className='absolute inset-0 max-sm:bg-gradient-to-b bg-gradient-to-r from-black via-transparent to-transparent'></div>
 			</div>
 		</div>
 	);
