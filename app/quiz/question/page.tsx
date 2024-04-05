@@ -21,7 +21,6 @@ const getQuestion = async (): Promise<quiz> => {
 };
 const page = async () => {
 	const question = await getQuestion();
-	console.log(question)
 
 	return (
 		<main className='max-w-screen-md mx-auto flex flex-col flex-wrap pt-6 px-4'>
