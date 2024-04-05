@@ -2,6 +2,8 @@
 
 import React from 'react';
 import Answers from './Answers';
+import endPoint from '../utils/endPoint';
+import QuestionLoader from './QuestionLoader';
 
 type quiz = {
 	id: string;
@@ -12,31 +14,34 @@ type quiz = {
 
 const Question = () => {
 	const [question, setQuestion] = React.useState<quiz | null>(null);
-
+	const [loading, setLoading] = React.useState(false);
 	React.useEffect(() => {
 		getQuestion();
 	}, []);
 
 	const getQuestion = async () => {
-		const data = await fetch(`http://localhost:3000/api/quiz`, {
+		setLoading(true);
+		const data = await fetch(`${endPoint}/quiz`, {
 			cache: 'no-store',
 		});
 		const result = await data.json();
 		console.log(result);
+		setLoading(false);
 		setQuestion(result);
 	};
 
 	return (
 		<>
-			<h4 className='text-md'>{question?.title}</h4>
-			<div className='flex flex-wrap overflow-auto mt-7 '>
-				<Answers question={question} getQuestion={getQuestion} />
-				{/* <Suspense fallback={<span>Loading..</span>}>
-				</Suspense> */}
-				{/* {question.answers.map((answer: string) => {
-					return <AnswerButton key={answer} answer={answer} correct_answer={question.correct_answer}  />;
-				})} */}
-			</div>
+			{loading ? (
+				<QuestionLoader />
+			) : (
+				<>
+					<h4 className='text-md'>{question?.title}</h4>
+					<div className='flex flex-wrap overflow-auto mt-7 '>
+						<Answers question={question} getQuestion={getQuestion} />
+					</div>
+				</>
+			)}
 		</>
 	);
 };

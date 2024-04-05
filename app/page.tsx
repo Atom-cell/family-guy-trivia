@@ -1,4 +1,5 @@
 import Character from './components/Character';
+import endPoint from './utils/endPoint';
 
 type Character = {
 	id: number;
@@ -15,7 +16,7 @@ type Character = {
 const getCharacters = async (): Promise<Character[]> => {
 	// try {
 	// } catch {}
-	const data = await fetch('http://localhost:3000/api/characters');
+	const data = await fetch(`${endPoint}/characters`);
 	const result = await data.json();
 	return result.data;
 };

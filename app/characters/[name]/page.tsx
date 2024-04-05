@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react';
 import Image from 'next/image';
 import ImageLoader from '@/app/components/ImageLoader';
+import endPoint from '../../utils/endPoint';
 
 type Character = {
 	id: number;
@@ -18,7 +19,7 @@ const getCharacterInfo = async (name: string): Promise<Character> => {
 	// try {
 	// } catch {}
 	const data = await fetch(
-		`http://localhost:3000/api/characters?name=${name}`,
+		`${endPoint}/characters?name=${name}`,
 		{ cache: 'no-store' }
 	);
 	const result = await data.json();
