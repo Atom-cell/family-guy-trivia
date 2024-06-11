@@ -19,7 +19,7 @@ const getCharacterInfo = async (name: string): Promise<Character> => {
 	// try {
 	// } catch {}
 	const data = await fetch(
-		`${endPoint}/characters?name=${name}`,
+		`/api/characters?name=${name}`,
 		{ cache: 'no-store' }
 	);
 	const result = await data.json();
