@@ -21,7 +21,7 @@ const Question = () => {
 
 	const getQuestion = async () => {
 		setLoading(true);
-		const data = await fetch(`/api/quiz`, {
+		const data = await fetch(`${endPoint}/api/quiz`, {
 			cache: 'no-store',
 		});
 		const result = await data.json();
