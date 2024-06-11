@@ -22,6 +22,10 @@ const getCharacters = async (): Promise<Character[]> => {
 };
 
 export default async function Home() {
+
+	if (!endPoint) {
+		return null;
+	}
 	const characters: Character[] = await getCharacters();
 
 	return (
