@@ -38,7 +38,7 @@ const Answers = ({ question, getQuestion }: answerProps) => {
 	return (
 		<>
 			<div className='w-full flex flex-wrap'>
-				{question?.answers.map((answer: string) => {
+				{question?.answers?.map((answer: string) => {
 					return (
 						<button
 							key={answer}

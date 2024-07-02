@@ -32,7 +32,7 @@ const page = async ({ params }: { params: { name: string } }) => {
 	return (
 		<div className='max-w-screen-md mx-auto flex flex-col flex-wrap pt-6 px-2'>
 			<h3 className='font-bold mb-2'>
-				{data.name
+				{data?.name
 					.split(' ')
 					.map((word) => word.charAt(0).toUpperCase() + word.slice(1))
 					.join(' ')}
