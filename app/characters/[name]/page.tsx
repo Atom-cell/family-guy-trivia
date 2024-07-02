@@ -75,7 +75,7 @@ const page = async ({ params }: { params: { name: string } }) => {
 						{data.skills?.map((skill: string) => (
 							<p
 								key={skill}
-								className='m-1 rounded-full p-1 px-2 text-sm bg-amber-950 text-amber-500'
+								className='w-auto h-auto m-1 rounded-full p-1 px-2 text-sm bg-amber-950 text-amber-500'
 							>
 								{skill}
 							</p>
