@@ -52,10 +52,7 @@ const page = async ({ params }: { params: { name: string } }) => {
 			<div className='flex flex-wrap justify-start items-start '>
 				<Suspense fallback={<ImageLoader />}>
 					{data.images?.map((image: string) => (
-						<div
-							key={image}
-							className='overflow-hidden rounded-lg m-1'
-						>
+						<div key={image} className='overflow-hidden rounded-lg m-1'>
 							<Image
 								src={image}
 								width={300}
@@ -89,7 +86,7 @@ const page = async ({ params }: { params: { name: string } }) => {
 					<h3>Famous Quotes</h3>
 					{data.quotes?.map((quote) => (
 						<div
-							key={quote.character_id}
+							key={quote.quote}
 							className='w-full py-3 pl-2 border-l-4 border-green-500 my-4 rounded-md text-slate-500 italic'
 						>
 							{quote.quote}

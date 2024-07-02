@@ -22,19 +22,17 @@ const Question = () => {
 
 	const getQuestion = async () => {
 		setLoading(true);
-		const data = await fetch(
-			`${endPoint}/api/quiz?timestamp=${new Date().getTime()}`,
-			{
-				headers: {
-					'Cache-Control': 'no-cache',
-					Pragma: 'no-cache',
-					Expires: '0',
-				},
+		const randomNumber = Math.floor(Math.random() * 16);
+		const data = await fetch(`${endPoint}/api/quiz?id=${randomNumber}`,{
+			method: 'GET',
+			headers: {
+				Accept: 'application/json'
+
 			}
-		);
+		});
 
 		const result = await data.json();
-		console.log(result);
+		// console.log("Result : ",result);
 		setLoading(false);
 		setQuestion(result);
 	};
