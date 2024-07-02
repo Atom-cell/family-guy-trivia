@@ -22,7 +22,17 @@ const Question = () => {
 
 	const getQuestion = async () => {
 		setLoading(true);
-		const data = await fetch(`${endPoint}/api/quiz`);
+		const data = await fetch(
+			`${endPoint}/api/quiz?timestamp=${new Date().getTime()}`,
+			{
+				headers: {
+					'Cache-Control': 'no-cache',
+					Pragma: 'no-cache',
+					Expires: '0',
+				},
+			}
+		);
+
 		const result = await data.json();
 		console.log(result);
 		setLoading(false);
