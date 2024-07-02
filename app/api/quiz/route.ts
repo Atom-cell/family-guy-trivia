@@ -5,5 +5,7 @@ export async function GET(request: Request, response: Response) {
 	
 	const randomNumber = Math.floor(Math.random() * 16);
 
-	return NextResponse.json(quiz.data[randomNumber]);
+	response = NextResponse.json(quiz.data[randomNumber]);
+	response.headers.set('Cache-Control', 'no-store');
+	return response;
 }
