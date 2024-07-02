@@ -15,13 +15,16 @@ type quiz = {
 const Question = () => {
 	const [question, setQuestion] = React.useState<quiz | null>(null);
 	const [loading, setLoading] = React.useState(false);
+
 	React.useEffect(() => {
 		getQuestion();
 	}, []);
 
 	const getQuestion = async () => {
 		setLoading(true);
-		const data = await fetch(`${endPoint}/api/quiz`);
+		const data = await fetch(`${endPoint}/api/quiz`, {
+			cache: 'no-store',
+		});
 		const result = await data.json();
 		console.log(result);
 		setLoading(false);
